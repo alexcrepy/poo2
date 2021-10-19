@@ -1,39 +1,30 @@
 <?php
-
 require_once 'Bicycle.php';
 
-$bike = new Bicycle("blue", 15);
-
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->getcurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake() . '<br>';
-
-$rockrider = new Bicycle("yellow",10);
-
-echo $rockrider->forward();
-echo '<br> Vitesse du vélo : ' . $rockrider->getCurrentSpeed() . ' km/h' . '<br>';
-echo $rockrider->brake();
-echo '<br> Vitesse du vélo : ' . $rockrider->getCurrentSpeed() . ' km/h' . '<br>';
-echo $rockrider->brake(). '<br>';
-
-$tornado = new Bicycle( "black", 8);
-
-echo $tornado->forward();
-echo '<br> Vitesse du vélo : ' . $tornado->getCurrentSpeed() . ' km/h' . '<br>';
-echo $tornado->brake();
-echo '<br> Vitesse du vélo : ' . $tornado->getCurrentSpeed() . ' km/h' . '<br>';
-echo $tornado->brake(). '<br>';
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
+echo $bicycle->brake();
+echo '<br> Vitesse du vélo : ' . $bicycle->getcurrentSpeed() . ' km/h' . '<br>';
+echo $bicycle->brake() . '<br>';
 
 require_once 'Cars.php';
 
-$mini = new Cars("red", 5, "electric");
+$car = new Car('green', 4, 'electric');
+echo $car->forward();
+echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
+echo $car->brake();
+echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
+echo $car->brake(). '<br>';
 
-echo $mini->start();
-echo '<br> Démarrage ok' . '<br>';
-echo $mini->forward();
-echo '<br> Vitesse de la voiture : ' . $mini->getCurrentSpeed() . ' km/h' . '<br>';
-echo $mini->brake();
-echo '<br> Vitesse de la voiture : ' . $mini->getCurrentSpeed() . ' km/h' . '<br>';
-echo $mini->brake();
+require_once 'Truck.php';
+$tanker = new Truck('white', 3, 'fuel', 34000);
+echo  $tanker->forward();
+echo '<br> Vitesse du camion : ' . $tanker->getCurrentSpeed() . ' km/h' . '<br>';
+echo $tanker->brake();
+echo '<br> Vitesse du camion : ' . $tanker->getCurrentSpeed() . ' km/h' . '<br>';
+echo $tanker->brake();
+echo '<br> Chargement du camion: '. $tanker->getLoading(). ' litres' . '<br>';
+echo $tanker->loading(). '<br>';
+
+?>
