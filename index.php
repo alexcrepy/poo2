@@ -1,30 +1,15 @@
 <?php
-require_once 'Bicycle.php';
 
+require_once 'Bicycle.php';
 $bicycle = new Bicycle('blue', 1);
 echo $bicycle->forward();
-echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bicycle->brake();
-echo '<br> Vitesse du vélo : ' . $bicycle->getcurrentSpeed() . ' km/h' . '<br>';
-echo $bicycle->brake() . '<br>';
+var_dump($bike);
 
 require_once 'Cars.php';
-
 $car = new Car('green', 4, 'electric');
-echo $car->forward();
-echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
-echo $car->brake();
-echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
-echo $car->brake(). '<br>';
+var_dump($car);
 
 require_once 'Truck.php';
-$tanker = new Truck('white', 3, 'fuel', 34000);
-echo  $tanker->forward();
-echo '<br> Vitesse du camion : ' . $tanker->getCurrentSpeed() . ' km/h' . '<br>';
-echo $tanker->brake();
-echo '<br> Vitesse du camion : ' . $tanker->getCurrentSpeed() . ' km/h' . '<br>';
-echo $tanker->brake();
-echo '<br> Chargement du camion: '. $tanker->getLoading(). ' litres' . '<br>';
-echo $tanker->loading(). '<br>';
-
-?>
+$tanker = new Truck('white', 2, 'fuel', 3000);
+var_dump($camion);
+echo $camion->filling();
