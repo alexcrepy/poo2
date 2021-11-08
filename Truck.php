@@ -2,43 +2,59 @@
 
 require_once 'Vehicle.php';
 
-class Truck  extends Vehicle
-{
+class Truck  extends Vehicle {
 
-    private $storageCapacity;
-    private $loading = 0;
-
-    public function __construct(string $color, int $nbSeats, string $energy, int $storageCapacity)
-    {
+    private string $energy;
+    private int $energyLevel;
+    private int $capacity;
+    private int $charge = 0;
+    public function __construct(string $color, int $nbSeats, string $energy, int $capacity) { 
         parent::__construct($color, $nbSeats);
-        $this->setEnergy($energy);
-        $this->setStorageCapacity($storageCapacity);
+        $this->energy = $energy;
+        $this->capacity = $capacity;
     }
-    public function setStorageCapacity(int $storageCapacity)
+
+    public function getEnergy(string $energy): string
     {
-        $this->storageCapacity = $storageCapacity;
+        return $this->energy;
     }
-    public function getStorageCapacity()
+    public function setEnergy(string $energy): Camion
     {
-        return $this->storageCapacity;
-    }
-    public function setEnergy(string $energy)
-    {
+    if (in_array($energy, self::ALLOWED_ENERGIES)) {
         $this->energy = $energy;
     }
-    public function getLoading(): int
-    {
-        return $this->loading;
+    return $this;
     }
-    public function loading(): string
+    public function getEnergyLevel(int $energyLevel): int
     {
-        $sentence = "";
-        if ($this->loading < $this->storageCapacity) {
-            $sentence .= "In filling";
-        }
-        if ($this->loading == $this->storageCapacity) {
-            $sentence .= "Full";
-        }
-        return $sentence;
+        return $this->energyLevel;
     }
-}
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
+    public function getCharge(int $charge): int
+    {
+        return $this->charge;
+    }
+    public function setCharge(int $charge): void
+    {
+        $this->charge = $charge;
+    }
+    public function getCapacity(int $capacity): int
+    {
+        return $this->capacity;
+    }
+    public function setCapacity(int $capacity): void
+    {
+        $this->charge = $capacity;
+    }
+    public function filling()
+    {
+        $charging = "";
+        while ($this->charge <= $this->capacity) {
+            $this->charge ++;
+            $charging .="Loading";
+        }
+            $charging .="full";
+            return $Loaded;
