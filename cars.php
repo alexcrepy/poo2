@@ -3,15 +3,12 @@
 
 require_once 'Vehicle.php';
 
-class Car extends Vehicle
-{
-
+class Car extends Vehicle {
     const ALLOWED_ENERGIES = [
         "fuel",
         "electric",
     ];
-
-   
+    
     private $energy;
     private $energyLevel;
 
